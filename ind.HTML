@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>25 Melville | Quality Student Accommodation</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0a261d', // Very dark green
+                            primary: '#113e32', // Deep Green
+                            accent: '#c5a059', // Muted Gold/Bronze
+                            light: '#f4f5f0', // Off-white/Cream
+                            surface: '#ffffff'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom styles */
+        .hero-bg {
+            /* Modest suburban house feel */
+            /* PLACEHOLDER: Replace the URL below with your own hero image */
+            background-image: linear-gradient(rgba(10, 38, 29, 0.8), rgba(10, 38, 29, 0.7)), url('https://placehold.co/1920x1080?text=Insert+Hero+House+Image');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        .room-card:hover .room-img {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-brand-light text-brand-primary font-sans antialiased selection:bg-brand-primary selection:text-brand-accent">
+
+    <nav class="fixed w-full z-50 bg-brand-primary/95 backdrop-blur-md shadow-sm transition-all duration-300 border-b border-white/10" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-24 items-center">
+                <div class="flex-shrink-0 flex flex-col justify-center cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <div class="flex items-center gap-2">
+                        <span class="font-serif text-3xl font-bold text-white tracking-widest">25 MELVILLE</span>
+                    </div>
+                    <span class="text-[10px] text-brand-accent tracking-[0.3em] uppercase">Student Accommodation</span>
+                </div>
+
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#home" class="text-gray-300 hover:text-brand-accent font-light tracking-wide transition text-sm uppercase">Home</a>
+                    <a href="#rooms" class="text-gray-300 hover:text-brand-accent font-light tracking-wide transition text-sm uppercase">The Rooms</a>
+                    <a href="#communal" class="text-gray-300 hover:text-brand-accent font-light tracking-wide transition text-sm uppercase">Shared Spaces</a>
+                    <a href="#contact" class="px-6 py-2 border border-brand-accent text-brand-accent font-medium hover:bg-brand-accent hover:text-white transition duration-300 uppercase text-xs tracking-widest">
+                        Apply Now
+                    </a>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-white hover:text-brand-accent focus:outline-none">
+                        <i data-lucide="menu" class="h-8 w-8"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-primary border-t border-white/10 absolute w-full">
+            <div class="px-4 pt-2 pb-6 space-y-2 shadow-xl">
+                <a href="#home" class="block px-3 py-3 rounded-md text-base font-medium text-white hover:text-brand-accent hover:bg-white/5">Home</a>
+                <a href="#rooms" class="block px-3 py-3 rounded-md text-base font-medium text-white hover:text-brand-accent hover:bg-white/5">The Rooms</a>
+                <a href="#communal" class="block px-3 py-3 rounded-md text-base font-medium text-white hover:text-brand-accent hover:bg-white/5">Shared Spaces</a>
+                <a href="#contact" class="block w-full text-center mt-4 px-5 py-3 border border-brand-accent text-brand-accent font-medium uppercase tracking-widest">Apply Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero-bg h-screen flex items-center justify-center relative">
+        <div class="absolute top-28 right-4 md:right-10 z-20 animate-fade-in">
+            <div class="bg-white/10 backdrop-blur-md border border-brand-accent/50 p-4 rounded-sm text-center">
+                <i data-lucide="award" class="h-8 w-8 text-brand-accent mx-auto mb-1"></i>
+                <p class="text-white font-serif font-bold tracking-widest text-sm">NSFAS</p>
+                <p class="text-brand-accent text-xs uppercase tracking-wide">Accredited</p>
+            </div>
+        </div>
+
+        <div class="absolute bottom-0 w-full h-32 bg-gradient-to-t from-brand-light to-transparent"></div>
+        
+        <div class="text-center px-4 max-w-5xl mx-auto relative z-10 animate-fade-in-up">
+            <span class="inline-block py-1 px-4 border-b border-brand-accent text-brand-accent text-xs font-semibold mb-8 tracking-[0.2em] uppercase">
+                Now Accepting 2026 Applications
+            </span>
+            <h1 class="text-5xl md:text-8xl font-serif text-white mb-6 leading-tight">
+                Welcome to <span class="italic">25 Melville</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-300 mb-12 font-light max-w-2xl mx-auto font-serif italic">
+                A secure and comfortable student house in the heart of Brandwag.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                <a href="#rooms" class="px-10 py-4 bg-brand-accent text-white font-serif text-lg hover:bg-white hover:text-brand-primary transition duration-500 shadow-2xl">
+                    View The Rooms
+                </a>
+                <a href="#contact" class="px-10 py-4 border border-white text-white font-serif text-lg hover:bg-white hover:text-brand-primary transition duration-500">
+                    Book a Viewing
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-brand-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h3 class="text-brand-accent uppercase tracking-[0.2em] text-sm font-semibold mb-3">The House</h3>
+                <h2 class="text-4xl md:text-5xl font-serif text-brand-primary">Student Living</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-0 border-t border-b border-brand-primary/10 divide-y md:divide-y-0 md:divide-x divide-brand-primary/10">
+                <div class="p-10 text-center group hover:bg-white transition duration-500">
+                    <div class="w-12 h-12 mx-auto mb-6 text-brand-primary group-hover:text-brand-accent transition duration-300">
+                        <i data-lucide="shield-check" class="h-10 w-10"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-brand-primary mb-3">Safe & Secure</h3>
+                    <p class="text-gray-600 font-light leading-relaxed">24/7 camera surveillance around the entire property for your peace of mind.</p>
+                </div>
+                <div class="p-10 text-center group hover:bg-white transition duration-500">
+                    <div class="w-12 h-12 mx-auto mb-6 text-brand-primary group-hover:text-brand-accent transition duration-300">
+                        <i data-lucide="users" class="h-10 w-10"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-brand-primary mb-3">Communal Living</h3>
+                    <p class="text-gray-600 font-light leading-relaxed">A focused environment with shared facilities designed for students.</p>
+                </div>
+                <div class="p-10 text-center group hover:bg-white transition duration-500">
+                    <div class="w-12 h-12 mx-auto mb-6 text-brand-primary group-hover:text-brand-accent transition duration-300">
+                        <i data-lucide="wifi" class="h-10 w-10"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-brand-primary mb-3">Connectivity</h3>
+                    <p class="text-gray-600 font-light leading-relaxed">Reliable internet access included, perfect for your studies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="rooms" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 border-b border-gray-100 pb-8">
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-serif text-brand-primary mb-4">Our Rooms</h2>
+                    <p class="text-gray-500 font-light text-lg">Every room is unique. Choose the one that suits your style.</p>
+                </div>
+                <div class="mt-6 md:mt-0 text-right">
+                     <p class="text-sm uppercase tracking-widest text-brand-accent mb-1">2026 Applications</p>
+                     <p class="text-3xl font-serif text-brand-primary">Open Now</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <div class="group cursor-pointer room-card" onclick="scrollToContact('Single Room 1')">
+                    <div class="h-80 overflow-hidden relative mb-6">
+                        <div class="absolute top-4 left-4 bg-brand-accent text-white text-[10px] font-bold px-3 py-1 uppercase tracking-widest z-10">Single Room 1</div>
+                        <img src="https://placehold.co/800x600?text=Insert+Single+Room+1" alt="Single Room 1" class="w-full h-full object-cover transition duration-700 room-img grayscale group-hover:grayscale-0">
+                        <div class="absolute inset-0 bg-brand-primary/20 group-hover:bg-transparent transition duration-500"></div>
+                    </div>
+                    <div class="border-l-2 border-brand-accent pl-6 transition-all duration-300 group-hover:pl-8">
+                        <h3 class="text-2xl font-serif text-brand-primary mb-2 group-hover:text-brand-accent transition">Private Single 1</h3>
+                        <p class="text-gray-500 text-sm mb-4 font-light">Your own personal space.</p>
+                        <div class="flex gap-4 text-xs text-brand-primary uppercase tracking-wider">
+                            <span>Standard Bed</span> &bull; <span>Desk</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group cursor-pointer room-card" onclick="scrollToContact('Single Room 2')">
+                    <div class="h-80 overflow-hidden relative mb-6">
+                        <div class="absolute top-4 left-4 bg-brand-accent text-white text-[10px] font-bold px-3 py-1 uppercase tracking-widest z-10">Single Room 2</div>
+                        <img src="https://placehold.co/800x600?text=Insert+Single+Room+2" alt="Single Room 2" class="w-full h-full object-cover transition duration-700 room-img grayscale group-hover:grayscale-0">
+                        <div class="absolute inset-0 bg-brand-primary/20 group-hover:bg-transparent transition duration-500"></div>
+                    </div>
+                    <div class="border-l-2 border-brand-accent pl-6 transition-all duration-300 group-hover:pl-8">
+                        <h3 class="text-2xl font-serif text-brand-primary mb-2 group-hover:text-brand-accent transition">Private Single 2</h3>
+                        <p class="text-gray-500 text-sm mb-4 font-light">Your own personal space.</p>
+                        <div class="flex gap-4 text-xs text-brand-primary uppercase tracking-wider">
+                            <span>Standard Bed</span> &bull; <span>Desk</span>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="group cursor-pointer room-card" onclick="scrollToContact('Single Room 3')">
+                    <div class="h-80 overflow-hidden relative mb-6">
+                        <div class="absolute top-4 left-4 bg-brand-accent text-white text-[10px] font-bold px-3 py-1 uppercase tracking-widest z-10">Single Room 3</div>
+                        <img src="https://placehold.co/800x600?text=Insert+Single+Room+3" alt="Single Room 3" class="w-full h-full object-cover transition duration-700 room-img grayscale group-hover:grayscale-0">
+                        <div class="absolute inset-0 bg-brand-primary/20 group-hover:bg-transparent transition duration-500"></div>
+                    </div>
+                    <div class="border-l-2 border-brand-accent pl-6 transition-all duration-300 group-hover:pl-8">
+                        <h3 class="text-2xl font-serif text-brand-primary mb-2 group-hover:text-brand-accent transition">Private Single 3</h3>
+                        <p class="text-gray-500 text-sm mb-4 font-light">Your own personal space.</p>
+                        <div class="flex gap-4 text-xs text-brand-primary uppercase tracking-wider">
+                            <span>Standard Bed</span> &bull; <span>Desk</span>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="group cursor-pointer room-card" onclick="scrollToContact('Single Room 4')">
+                    <div class="h-80 overflow-hidden relative mb-6">
+                        <div class="absolute top-4 left-4 bg-brand-accent text-white text-[10px] font-bold px-3 py-1 uppercase tracking-widest z-10">Single Room 4</div>
+                        <img src="https://placehold.co/800x600?text=Insert+Single+Room+4" alt="Single Room 4" class="w-full h-full object-cover transition duration-700 room-img grayscale group-hover:grayscale-0">
+                        <div class="absolute inset-0 bg-brand-primary/20 group-hover:bg-transparent transition duration-500"></div>
+                    </div>
+                    <div class="border-l-2 border-brand-accent pl-6 transition-all duration-300 group-hover:pl-8">
+                        <h3 class="text-2xl font-serif text-brand-primary mb-2 group-hover:text-brand-accent transition">Private Single 4</h3>
+                        <p class="text-gray-500 text-sm mb-4 font-light">Your own personal space.</p>
+                        <div class="flex gap-4 text-xs text-brand-primary uppercase tracking-wider">
+                            <span>Standard Bed</span> &bull; <span>Desk</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group cursor-pointer room-card" onclick="scrollToContact('Sharing Room A')">
+                    <div class="h-80 overflow-hidden relative mb-6">
+                        <div class="absolute top-4 left-4 bg-brand-primary text-white text-[10px] font-bold px-3 py-1 uppercase tracking-widest z-10">Sharing Unit A</div>
+                        <img src="https://placehold.co/800x600?text=Insert+Sharing+Room+A" alt="Sharing Room A" class="w-full h-full object-cover transition duration-700 room-img grayscale group-hover:grayscale-0">
+                        <div class="absolute inset-0 bg-brand-primary/20 group-hover:bg-transparent transition duration-500"></div>
+                    </div>
+                    <div class="border-l-2 border-brand-accent pl-6 transition-all duration-300 group-hover:pl-8">
+                        <h3 class="text-2xl font-serif text-brand-primary mb-2 group-hover:text-brand-accent transition">The Twin Share A</h3>
+                        <p class="text-gray-500 text-sm mb-4 font-light">Spacious room for two students.</p>
+                        <div class="flex gap-4 text-xs text-brand-primary uppercase tracking-wider">
+                            <span>2 Single Beds</span> &bull; <span>Dual Desks</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group cursor-pointer room-card" onclick="scrollToContact('Sharing Room B')">
+                    <div class="h-80 overflow-hidden relative mb-6">
+                        <div class="absolute top-4 left-4 bg-brand-primary text-white text-[10px] font-bold px-3 py-1 uppercase tracking-widest z-10">Sharing Unit B</div>
+                        <img src="https://placehold.co/800x600?text=Insert+Sharing+Room+B" alt="Sharing Room B" class="w-full h-full object-cover transition duration-700 room-img grayscale group-hover:grayscale-0">
+                        <div class="absolute inset-0 bg-brand-primary/20 group-hover:bg-transparent transition duration-500"></div>
+                    </div>
+                    <div class="border-l-2 border-brand-accent pl-6 transition-all duration-300 group-hover:pl-8">
+                        <h3 class="text-2xl font-serif text-brand-primary mb-2 group-hover:text-brand-accent transition">The Twin Share B</h3>
+                        <p class="text-gray-500 text-sm mb-4 font-light">Spacious room for two students.</p>
+                        <div class="flex gap-4 text-xs text-brand-primary uppercase tracking-wider">
+                            <span>2 Single Beds</span> &bull; <span>Dual Desks</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group cursor-pointer room-card md:col-span-2 lg:col-span-1 lg:col-start-2" onclick="scrollToContact('Bachelor Suite')">
+                    <div class="h-80 overflow-hidden relative mb-6">
+                        <div class="absolute top-4 left-4 bg-brand-dark text-white text-[10px] font-bold px-3 py-1 uppercase tracking-widest z-10">Private Unit</div>
+                        <img src="https://placehold.co/800x600?text=Insert+Bachelor+Unit" alt="Bachelor Flat" class="w-full h-full object-cover transition duration-700 room-img grayscale group-hover:grayscale-0">
+                        <div class="absolute inset-0 bg-brand-primary/20 group-hover:bg-transparent transition duration-500"></div>
+                    </div>
+                    <div class="border-l-2 border-brand-accent pl-6 transition-all duration-300 group-hover:pl-8">
+                        <h3 class="text-2xl font-serif text-brand-primary mb-2 group-hover:text-brand-accent transition">The Bachelor Unit</h3>
+                        <p class="text-gray-500 text-sm mb-4 font-light">Exclusive self-contained suite.</p>
+                        <div class="flex gap-4 text-xs text-brand-primary uppercase tracking-wider">
+                            <span>En-suite</span> &bull; <span>Kitchenette</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="communal" class="py-24 bg-brand-primary/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+             <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-serif text-brand-primary mb-4">Communal Spaces</h2>
+                <p class="text-gray-500 font-light text-lg">Shared facilities maintained for your comfort.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="group bg-white room-card shadow-lg rounded-sm overflow-hidden">
+                    <div class="h-80 overflow-hidden relative">
+                         <img src="https://placehold.co/800x600?text=Insert+Kitchen+Image" alt="Kitchen" class="w-full h-full object-cover transition duration-700 room-img grayscale group-hover:grayscale-0">
+                        <div class="absolute inset-0 bg-brand-primary/10 group-hover:bg-transparent transition duration-500"></div>
+                        <div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-brand-dark/80 to-transparent">
+                             <h3 class="text-2xl font-serif text-white">The Kitchen</h3>
+                        </div>
+                    </div>
+                 </div>
+
+                 <div class="group bg-white room-card shadow-lg rounded-sm overflow-hidden">
+                    <div class="h-80 overflow-hidden relative">
+                         <img src="https://placehold.co/800x600?text=Insert+Bathroom+Image" alt="Bathroom" class="w-full h-full object-cover transition duration-700 room-img grayscale group-hover:grayscale-0">
+                        <div class="absolute inset-0 bg-brand-primary/10 group-hover:bg-transparent transition duration-500"></div>
+                        <div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-brand-dark/80 to-transparent">
+                             <h3 class="text-2xl font-serif text-white">The Bathroom</h3>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="amenities" class="py-24 bg-brand-primary text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col md:flex-row items-center justify-between mb-20">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <h2 class="text-4xl md:text-5xl font-serif mb-4">House Facilities</h2>
+                    <p class="text-gray-400 font-light text-lg">Essential amenities included in your rent.</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10 border border-white/10">
+                <div class="bg-brand-primary p-8 hover:bg-white/5 transition duration-300 flex flex-col items-center text-center">
+                    <i data-lucide="waves" class="h-8 w-8 text-brand-accent mb-4"></i>
+                    <h4 class="font-serif text-lg tracking-wide">Laundry</h4>
+                </div>
+                <div class="bg-brand-primary p-8 hover:bg-white/5 transition duration-300 flex flex-col items-center text-center">
+                    <i data-lucide="coffee" class="h-8 w-8 text-brand-accent mb-4"></i>
+                    <h4 class="font-serif text-lg tracking-wide">Kitchen</h4>
+                </div>
+                <div class="bg-brand-primary p-8 hover:bg-white/5 transition duration-300 flex flex-col items-center text-center">
+                    <i data-lucide="bath" class="h-8 w-8 text-brand-accent mb-4"></i>
+                    <h4 class="font-serif text-lg tracking-wide">Bathrooms</h4>
+                </div>
+                <div class="bg-brand-primary p-8 hover:bg-white/5 transition duration-300 flex flex-col items-center text-center">
+                    <i data-lucide="cctv" class="h-8 w-8 text-brand-accent mb-4"></i>
+                    <h4 class="font-serif text-lg tracking-wide">Security</h4>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <p class="text-sm font-light text-gray-400">All rooms inclusive of water, electricity, and WiFi.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 bg-brand-light">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white shadow-2xl flex flex-col md:flex-row">
+                
+                <div class="bg-brand-primary p-12 md:w-2/5 text-white flex flex-col justify-between relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4 opacity-10">
+                        <i data-lucide="graduation-cap" class="h-48 w-48 text-white"></i>
+                    </div>
+                    
+                    <div class="relative z-10">
+                        <span class="text-brand-accent uppercase tracking-widest text-xs font-bold mb-4 block">Get in Touch</span>
+                        <h3 class="text-3xl font-serif mb-8">Contact Us</h3>
+                        
+                        <div class="space-y-8 font-light">
+                            <div class="flex items-start">
+                                <i data-lucide="map-pin" class="h-5 w-5 text-brand-accent mr-4 mt-1"></i>
+                                <div>
+                                    <p class="font-medium text-white">Address</p>
+                                    <p class="text-gray-400 mt-1">25 Melville Drive<br>Brandwag, 9301</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i data-lucide="phone" class="h-5 w-5 text-brand-accent mr-4 mt-1"></i>
+                                <div>
+                                    <p class="font-medium text-white">Phone</p>
+                                    <p class="text-gray-400 mt-1">+27 72 944 8615</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i data-lucide="mail" class="h-5 w-5 text-brand-accent mr-4 mt-1"></i>
+                                <div>
+                                    <p class="font-medium text-white">Email</p>
+                                    <p class="text-gray-400 mt-1 break-all">oagengsegomotso@gmail.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-12 relative z-10">
+                        <div class="h-px w-full bg-white/10 mb-6"></div>
+                        <p class="text-brand-accent font-serif italic text-lg">"Your home away from home."</p>
+                    </div>
+                </div>
+
+                <div class="p-12 md:w-3/5 bg-white">
+                    <h3 class="text-3xl font-serif text-brand-primary mb-8">Apply for 2026</h3>
+                    <form onsubmit="event.preventDefault(); alert('Thank you for your inquiry. 25 Melville management will contact you shortly.');" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs uppercase tracking-wider text-gray-500 mb-2">First Name</label>
+                                <input type="text" class="w-full px-0 py-3 border-b border-gray-300 focus:border-brand-accent outline-none transition bg-transparent placeholder-gray-300" placeholder="John">
+                            </div>
+                            <div>
+                                <label class="block text-xs uppercase tracking-wider text-gray-500 mb-2">Last Name</label>
+                                <input type="text" class="w-full px-0 py-3 border-b border-gray-300 focus:border-brand-accent outline-none transition bg-transparent placeholder-gray-300" placeholder="Doe">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider text-gray-500 mb-2">Email Address</label>
+                            <input type="email" class="w-full px-0 py-3 border-b border-gray-300 focus:border-brand-accent outline-none transition bg-transparent placeholder-gray-300" placeholder="student@university.ac.za">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider text-gray-500 mb-2">Interested Room</label>
+                            <select id="room-select" class="w-full px-0 py-3 border-b border-gray-300 focus:border-brand-accent outline-none transition bg-transparent text-brand-primary">
+                                <option>Please select...</option>
+                                <option value="Single Room 1">Single Room 1</option>
+                                <option value="Single Room 2">Single Room 2</option>
+                                <option value="Single Room 3">Single Room 3</option>
+                                <option value="Single Room 4">Single Room 4</option>
+                                <option value="Sharing Room A">Twin Sharing A</option>
+                                <option value="Sharing Room B">Twin Sharing B</option>
+                                <option value="Bachelor Suite">Bachelor Unit</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider text-gray-500 mb-2">Message</label>
+                            <textarea rows="3" class="w-full px-0 py-3 border-b border-gray-300 focus:border-brand-accent outline-none transition bg-transparent placeholder-gray-300" placeholder="I would like to book a viewing..."></textarea>
+                        </div>
+
+                        <div class="pt-4">
+                            <button type="submit" class="w-full bg-brand-primary text-white font-serif text-lg py-4 hover:bg-brand-dark transition duration-300 shadow-xl">
+                                Send Inquiry
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-brand-dark border-t border-white/5 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-12">
+                <div class="text-center md:text-left mb-8 md:mb-0">
+                    <h2 class="font-serif text-3xl font-bold text-white tracking-widest mb-2">25 MELVILLE</h2>
+                    <p class="text-brand-accent text-xs uppercase tracking-[0.3em]">Student Accommodation</p>
+                </div>
+                <div class="flex space-x-8">
+                    <a href="#" class="text-gray-500 hover:text-brand-accent transition"><i data-lucide="facebook" class="h-5 w-5"></i></a>
+                    <a href="#" class="text-gray-500 hover:text-brand-accent transition"><i data-lucide="instagram" class="h-5 w-5"></i></a>
+                </div>
+            </div>
+            <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-600 text-xs">
+                <p>&copy; 2025 25 Melville Accommodation. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white transition">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Sticky Navbar effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 20) {
+                navbar.classList.add('shadow-lg');
+                navbar.classList.add('bg-brand-primary/95');
+            } else {
+                navbar.classList.remove('shadow-lg');
+            }
+        });
+
+        // Helper to scroll to contact and pre-select room
+        function scrollToContact(roomName) {
+            const select = document.getElementById('room-select');
+            // Find option with matching value
+            for(let i=0; i < select.options.length; i++) {
+                if(select.options[i].value.includes(roomName)) {
+                    select.selectedIndex = i;
+                    break;
+                }
+            }
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
